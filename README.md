@@ -2,6 +2,12 @@
 
 POC of https://ieeexplore.ieee.org/abstract/document/10010412/ 
 
+Authors `Muhammad Iqbal Syamil Ayasy, Ari Moesriami Barmawi`
+Publication date `2022/10/26`
+Conference `2022 International Conference on Green Energy, Computing and Sustainable Technology (GECOST)``
+Pages `86-92``
+Publisher `IEEE`
+
 ### ecc encrypt & decrypt
 `key-generation.js` for generate key that be used to encrypt
 `encrypt.js` for encrypt url metadata using ecc
