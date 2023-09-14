@@ -1,0 +1,128 @@
+<html>
+  <head>
+    <title>Dashboard</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Get some bootstrap default styles -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  </head>
+  <body>
+    <!-- Construct a Bootstrap layout -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>Dashboard</h1>
+
+          <p>No wallet connected</p>
+
+          <div id="prepare">
+            <button class="btn btn-primary" id="btn-connect">
+              Connect wallet
+            </button>
+          </div>
+
+          <div id="connected" style="display: none">
+
+            <button class="btn btn-primary" id="btn-disconnect">
+              Disconnect wallet
+            </button>
+
+            <hr>
+
+            <div id="network">
+              <p>
+                <strong>Connected blockchain:</strong> <span id="network-name"></span>
+              </p>
+
+              <p>
+                <strong>Selected account:</strong> <span id="selected-account"></span>
+              </p>
+              
+              <p>
+                <strong></strong> <span id="tx"></span>
+              </p>
+            </div>
+
+            <hr>
+            <div class="container">
+              <p>
+                <strong>Contract Address </strong>
+                <span id="contract-address"></span>
+              </p>
+              <p>
+                <strong>Contract Balance </strong>
+                <span id="contract-balance"></span>
+              </p>
+            </div>
+            <table class="table table-listing">
+              <thead>
+                <th>Address</th>
+                <th>ETH balance</th>
+              </thead>
+
+              <tbody id="accounts">
+              </tbody>
+            </table>
+            <hr>
+            <div class="container">
+              <h4>List Of Active Order</h4>
+              <div id="activeSales" class="row">
+                <div class="col-md-4">
+                  <div class="panel panel-primary">
+                    <div class="panel-heading">
+                      <h3 class="panel-title">Sales 1</h3>
+                    </div>
+                    <div class="panel-body">
+                      <p><strong>Buyer Address :</strong> 0xdeadaf6bbef5d815aea569da44ef09e39f2bbef8</p>
+                      <p><strong>Buy Time :</strong> 30 May 2022</p>
+                      <p><strong>Status :</strong> false</p>
+                      <p><strong>Collateral Status :</strong> Unpaid</p>
+                      <hr>
+                      <div class="btn btn-primary">Download</div>
+                      <div class="btn btn-primary">Confirm</div>
+                      <div class="btn btn-primary">Dispute</div>
+                    </div>
+                  </div>
+                </div>                
+              </div>
+            </div>
+            
+          </div>
+
+          <br>
+
+
+        </div>
+      </div>
+    </div>
+
+    <!-- We use simple <template> templating for the example -->
+    <div id="templates" style="display: none">
+      <template id="template-balance">
+        <tr>
+          <th class="address"></th>
+          <td class="balance"></td>
+        </tr>
+      </template>
+    </div>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.12.0/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.12.0/js/dataTables.bootstrap.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $('#listOfSignature').DataTable();
+      });
+    </script>
+    <script type="text/javascript" src="https://unpkg.com/web3@1.2.11/dist/web3.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/web3modal@1.9.0/dist/index.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/evm-chains@0.2.0/dist/umd/index.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/@walletconnect/web3-provider@1.2.1/dist/umd/index.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/fortmatic@2.0.6/dist/fortmatic.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script type="text/javascript" src="abi.js"></script>
+    <script type="text/javascript" src="dashboard.js"></script>
+  </body>
+</html>
